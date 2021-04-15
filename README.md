@@ -1,7 +1,7 @@
 # Units-DSML
 A domain specific modelling language for unit conversions in plain english
 
-##Usage Instruction:
+## Usage Instruction:
 Download or clone the project
 Open the project via eclipse
 Right click and run as Generate Xtext Artifact
@@ -9,7 +9,7 @@ Then right click and run as eclipse application
 create a new java project in the new run time eclipse that opens up
 copy the example project below to test the capablities of the language.
 
-##Example Project
+## Example Project
 
 let mass = 25
 let distance = 20
