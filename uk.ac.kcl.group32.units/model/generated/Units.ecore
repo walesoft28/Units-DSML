@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="units" nsURI="http://www.ac.uk/kcl/group32/units/Units" nsPrefix="units">
+  <eClassifiers xsi:type="ecore:EClass" name="Units">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
+        eType="#//Statements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MassConversion" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="massValue" eType="#//IntExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialMassValue" eType="#//MassUnits"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="convertedMassValue" eType="#//MassUnits"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthConversion" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lengthValue" eType="#//IntExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialLength" eType="#//LengthUnits"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="convertedLength" eType="#//LengthUnits"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConversion" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//IntExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialTime" eType="#//TimeUnits"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="convertedTime" eType="#//TimeUnits"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MassUnits">
+    <eLiterals name="kg" literal="kg"/>
+    <eLiterals name="g" value="1" literal="g"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnits">
+    <eLiterals name="hr" literal="hr"/>
+    <eLiterals name="m" value="1" literal="m"/>
+    <eLiterals name="s" value="2" literal="s"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LengthUnits">
+    <eLiterals name="km" literal="km"/>
+    <eLiterals name="m" value="1" literal="m"/>
+    <eLiterals name="cm" value="2" literal="cm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntLiteral" eSuperTypes="#//IntExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealLiteral" eSuperTypes="#//IntExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntVarExpression" eSuperTypes="#//IntExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDeclaration"/>
+  </eClassifiers>
+</ecore:EPackage>
